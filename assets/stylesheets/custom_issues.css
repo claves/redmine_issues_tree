@@ -1,3 +1,17 @@
 .tree-actions-container {
   margin: 10px;
 }
+/* Expander icons (Redmine core SVG sprite via expanderTemplate) */
+table.treetable span.indenter a.issues-tree-expander {
+  display: inline-flex;
+  align-items: center;
+  width: 19px;
+}
+table.treetable span.indenter a.issues-tree-expander svg {
+  width: 16px;
+  height: 16px;
+}
+table.treetable tr.collapsed span.indenter a svg.expander-expanded,
+table.treetable tr.expanded span.indenter a svg.expander-collapsed {
+  display: none;
+}

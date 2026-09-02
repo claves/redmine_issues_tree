@@ -2,6 +2,10 @@
 <% query_options = nil unless defined?(query_options) %>
 <% query_options ||= {} %>
 
+<%# jquery.treetable の展開アンカーに使うテンプレート (コアの SVG アイコン)。
+    collapsed/expanded は行のクラスに応じて CSS で表示を切り替える %>
+<template id="issues-tree-expander-template"><a href="#" class="issues-tree-expander"><%= sprite_icon('angle-right', size: 16, css_class: 'expander-collapsed') %><%= sprite_icon('angle-down', size: 16, css_class: 'expander-expanded') %></a></template>
+
 <div class="tree-actions-container">
   <input type="button" value="<%= l(:expand_current_nodes, scope: 'issues_tree') %>" onclick="<%= "jQuery('#'+'#{tree_id}').treetable('expandAll');" %>">
   <input type="button" value="<%= l(:collapse_all, scope: 'issues_tree') %>" onclick="<%= "jQuery('#'+'#{tree_id}').treetable('collapseAll');" %>">

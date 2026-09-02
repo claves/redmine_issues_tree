@@ -2,9 +2,12 @@ $( document ).ready(function() {
   var $table = $("#issues-tree");
   var $form = $(".issues-tree-index-form");
 
+  var expanderTemplate = $('#issues-tree-expander-template').html();
+
   $table.treetable({
     column: $form.data('treetableColumnNumber'),
     expandable: true,
+    expanderTemplate: expanderTemplate || "<a href='#'>&nbsp;</a>",
     onNodeCollapse: function() {
       var node = this;
       $table.treetable("unloadBranch", node);
