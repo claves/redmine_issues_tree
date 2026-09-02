@@ -6,7 +6,7 @@ $( document ).ready(function() {
 
     $.ajax({
       type: "POST",
-      url: $(e.target).data('linkToTreeView'),
+      url: $(e.currentTarget).data('linkToTreeView'),
       data: jQuery('#query_form').serialize(),
       dataType: "json",
       success: function (data, textStatus) {
