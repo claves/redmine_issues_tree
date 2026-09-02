@@ -10,6 +10,8 @@ table.treetable span.indenter a.issues-tree-expander {
 table.treetable span.indenter a.issues-tree-expander svg {
   width: 16px;
   height: 16px;
+  /* クリック対象を <a> に保つ (コアの行選択 JS とプラグイン JS は e.target を見る) */
+  pointer-events: none;
 }
 table.treetable tr.collapsed span.indenter a svg.expander-expanded,
 table.treetable tr.expanded span.indenter a svg.expander-collapsed {
